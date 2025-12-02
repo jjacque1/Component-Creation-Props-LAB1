@@ -1,4 +1,4 @@
-//=====================ALERT BOX=============================
+//=====================ALERT BOX INTERFACE=============================
 
 export type AlertType = 'success' | 'error' | 'warning' | 'info';
  
@@ -9,7 +9,7 @@ export interface AlertBoxProps {
   children?: React.ReactNode;
 }
 
-//======================USER PROFILE===================
+//======================USER PROFILE INTERFACE===================
 
 export interface User {
   id: string;
@@ -27,7 +27,7 @@ export interface UserProfileCardProps {
   children?: React.ReactNode;
 }
 
-//=========================PRODUCT DISPLAY======================
+//=========================PRODUCT INTERFACE ======================
 
 export interface Product {
   id: string;
