@@ -1,7 +1,7 @@
 //=====================ALERT BOX INTERFACE=============================
 
-export type AlertType = 'success' | 'error' | 'warning' | 'info';
- 
+export type AlertType = "success" | "error" | "warning" | "info";
+
 export interface AlertBoxProps {
   type: AlertType;
   message: string;
@@ -18,7 +18,7 @@ export interface User {
   role: string;
   avatarUrl?: string;
 }
- 
+
 export interface UserProfileCardProps {
   user: User;
   showEmail?: boolean;
@@ -37,7 +37,7 @@ export interface Product {
   imageUrl?: string;
   inStock: boolean;
 }
- 
+
 export interface ProductDisplayProps {
   product: Product;
   showDescription?: boolean;

@@ -8,26 +8,25 @@ export function UserProfileCard({
   children,
 }: UserProfileCardProps) {
   return (
-    <div >
-        <div  className="border-4 p-4 ">
-             <h2>{user.name}</h2>
+    <div>
+      <div className="border-4 p-4 ">
+        <h2>{user.name}</h2>
 
-      {showEmail && <p>{user.email}</p>}
+        {showEmail && <p>{user.email}</p>}
 
-      {showRole && <p>{user.role}</p>}
+        {showRole && <p>{user.role}</p>}
 
-      {onEdit && (
-        <button
-          className="border-2 rounded p-2 bg-blue-300"
-          onClick={() => onEdit(user.name)}
-        >
-          Edit Profile
-        </button>
-      )}
+        {onEdit && (
+          <button
+            className="border-2 rounded p-2 bg-blue-300"
+            onClick={() => onEdit(user.name)}
+          >
+            Edit Profile
+          </button>
+        )}
 
-      {children}
-        </div>
-     
+        {children}
+      </div>
     </div>
   );
 }

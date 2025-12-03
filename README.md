@@ -1,73 +1,125 @@
-# React + TypeScript + Vite
+# Project Title:
+Component Creation & Props
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# My Solution ScreenShot:
 
-Currently, two official plugins are available:
+![alt text](ProjectScreenShot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Project Requirements:
 
-## React Compiler
+Component Implementation:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Component Testing:
 
-## Expanding the ESLint configuration
+Component Composition:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Documentation:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Before Starting:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Create a new React TypeScript project using Vite:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+  - npm create vite@latest component-library -- --template react-ts
+  - cd component-library
+  - npm install
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. Create Folder Structure:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+src/
+  components/
+    AlertBox/
+      AlertBox.tsx
+      AlertBox.test.tsx
+    UserProfileCard/
+      UserProfileCard.tsx
+      UserProfileCard.test.tsx
+    ProductDisplay/
+      ProductDisplay.tsx
+      ProductDisplay.test.tsx
+  types/
+    index.ts
+
+# Boiler Plate Code:
+
+- # Boiler Plate Code:Create an AlertBox component that can display different types of alerts (success, error, warning, info) with customizable messages.
+
+// types/index.ts
+export type AlertType = 'success' | 'error' | 'warning' | 'info';
+ 
+export interface AlertBoxProps {
+  type: AlertType;
+  message: string;
+  onClose?: () => void;
+  children?: React.ReactNode;
+}
+
+- # Create a UserProfileCard component that displays user information with optional sections.
+
+// types/index.ts
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  avatarUrl?: string;
+}
+ 
+export interface UserProfileCardProps {
+  user: User;
+  showEmail?: boolean;
+  showRole?: boolean;
+  onEdit?: (userId: string) => void;
+  children?: React.ReactNode;
+}
+
+- # Create a ProductDisplay component that shows product information with configurable display options.
+
+// types/index.ts
+export interface Product {
+  id: string;
+  name: string;
+  price: number;
+  description: string;
+  imageUrl?: string;
+  inStock: boolean;
+}
+ 
+export interface ProductDisplayProps {
+  product: Product;
+  showDescription?: boolean;
+  showStockStatus?: boolean;
+  onAddToCart?: (productId: string) => void;
+  children?: React.ReactNode;
+}
+
+
+# How to Use:
+
+1. cd into your project folder in vscode, run npm run dev
+2. app will open in defalut browser
+3. you can click the blue "Edit Profile" button to display dynamic alerts for each profile
+4. you can click the green "Add to Cart" button to diaplay dynamic shopping cart messages
+5. click the "xxx" to the right of you screen to display dynamic exit messages
+
+# Challenges:
+
+1. I struggled getting Tailwind to work properly, I initially deleted the App.css and the index.css that is automatically created when you download reach + vite. I had to reCreated both files manually. Then i had to Download tailwind manually in the terminal, make some changes inside postcss.config.js and tailwind.config.js, added @tailwind base;
+@tailwind components;
+@tailwind utilities; inside index.css before tailwind could work. 
+
+2. I had to go back to previous lesson on interface to remember how to create the user interface for the UserProfileCardProps interface, same with product interface for ProductDisplayProps interface.
+
+3. Destructuring props was also a challenge i faced, I tried to do it independently but nothing was working so i had to look at the example in Lesson 2/3.
+
+
+# Relection: 
+
+1. How did you handle optional props in your components?
+
+2. What considerations did you make when designing the component interfaces?
+3. How did you ensure type safety across your components?
+4. What challenges did you face when implementing component composition?
+
+# acknowledgement
+
