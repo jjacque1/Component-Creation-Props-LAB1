@@ -8,7 +8,7 @@ export function UserProfileCard({
     children,
 }: UserProfileCardProps ) {
     return (
-        <div className="border p-4">
+        <div className="border-4 p-4">
             <h2>{ user.name }</h2>
 
             {
@@ -25,7 +25,7 @@ export function UserProfileCard({
 
             {
                 onEdit && (
-                    <button onClick={() => onEdit(user.name)}>
+                    <button className="border-2 rounded p-1 bg-blue-300" onClick={() => onEdit(user.name)}>
                         Edit Profile
                     </button>
                 )
