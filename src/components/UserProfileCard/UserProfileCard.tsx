@@ -18,7 +18,7 @@ export function UserProfileCard({
 
       {onEdit && (
         <button
-          className="border-2 rounded p-1 bg-blue-300"
+          className="border-2 rounded p-2 bg-blue-300"
           onClick={() => onEdit(user.name)}
         >
           Edit Profile

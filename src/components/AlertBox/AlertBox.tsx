@@ -15,8 +15,8 @@ export function AlertBox({ type, message, onClose, children }: AlertBoxProps) {
         {onClose && (
           <button
             onClick={onClose}
-            className="ml-4 text-gray-500 hover:text-gray-700"
-          ></button>
+            className="ml-4 text-gray-500 hover:text-gray-700 text-2xl font-bold p-0-4"
+          >xxx</button>
         )}
       </div>
       {children}

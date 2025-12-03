@@ -15,7 +15,7 @@ function App() {
   const user2 = {
     id: "2",
     name: "Mary Jane",
-    email: "mary.dojane@example.com",
+    email: "mary.jane@example.com",
     role: "Ai Engineer",
   };
 
@@ -42,7 +42,7 @@ function App() {
       <AlertBox
         type="info"
         message="Edit Profile below."
-        onClose={() => alert("Bye-bye")}
+        onClose={() => alert("Profile changes saved!")}
       ></AlertBox>
 
       <UserProfileCard
@@ -61,9 +61,9 @@ function App() {
 
       <div className="mt-24">
         <AlertBox
-          type="info"
+          type="success"
           message="Add Product to cart."
-          onClose={() => alert("Bye-bye")}
+          onClose={() => alert("Order successful!")}
         ></AlertBox>
       </div>
 
