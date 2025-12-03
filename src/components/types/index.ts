@@ -23,7 +23,7 @@ export interface UserProfileCardProps {
   user: User;
   showEmail?: boolean;
   showRole?: boolean;
-  onEdit?: (userId: string) => void;
+  onEdit?: (id: string) => void;
   children?: React.ReactNode;
 }
 
@@ -42,6 +42,7 @@ export interface ProductDisplayProps {
   product: Product;
   showDescription?: boolean;
   showStockStatus?: boolean;
+  freeDelivery?: string;
   onAddToCart?: (productId: string) => void;
   children?: React.ReactNode;
 }
